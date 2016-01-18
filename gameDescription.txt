@@ -1,2 +1,7 @@
-This is a game
+This is a platformer game where the character cannot stop running.
+The character, however, can switch direction.
+The object of the game is to reach the goal.
+Game story:
+
+You are an anti virus in a computer. Fix the computer
 
