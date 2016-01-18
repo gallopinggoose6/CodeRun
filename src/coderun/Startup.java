@@ -1,5 +1,7 @@
-package codeRun;
+package coderun;
 
+import keypresses.KeyBindings;
+// This class is activated by the launchgame class
 // This class starts up everything.
 // It initializes most of the classes.
 // It runs other code too. All code here will never be run again.
@@ -8,10 +10,11 @@ package codeRun;
 // You can use the full class name for the name of the object.
 public class Startup{
 	
-	Display display;
+	Frame frame;
+	KeyBindings keyBindings;
 
 	public Startup(){
 
-		display = new Display();
+		frame = new Frame(keyBindings);
 	}
 }
