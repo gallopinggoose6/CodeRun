@@ -15,6 +15,7 @@ public class Startup{
 
 	public Startup(){
 
+		keyBindings = new KeyBindings();
 		frame = new Frame(keyBindings);
 	}
 }

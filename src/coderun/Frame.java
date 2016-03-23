@@ -24,7 +24,11 @@ public class Frame extends JFrame{
 		gp.setVisible(true);
 		gp.setLayout(new GridLayout(1,1));
 		this.setLayout(new GridLayout(1,1));
-		//gp.add(whatever);
+		setSize(400,400);
+		setResizable(true);
+		setTitle("Code Run");
+		setLocationRelativeTo(null);
+		//gp.add(paint);
 		this.add(keyBindings);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
