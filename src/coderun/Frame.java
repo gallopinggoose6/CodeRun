@@ -31,5 +31,6 @@ public class Frame extends JFrame{
 		//gp.add(paint);
 		this.add(keyBindings);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
 	}
 }
