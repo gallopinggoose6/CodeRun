@@ -26,7 +26,7 @@ public class Frame extends JFrame{
 		this.setLayout(new GridLayout(1,1));
 		setSize(400,400);
 		setResizable(true);
-		setTitle("Code Run");
+		setTitle("Code Runner");
 		setLocationRelativeTo(null);
 		//gp.add(paint);
 		this.add(keyBindings);
