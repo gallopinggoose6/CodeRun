@@ -1,4 +1,4 @@
-package keypresses;
+package front.input.keypresses;
 
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;

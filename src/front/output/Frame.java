@@ -1,9 +1,9 @@
-package coderun;
+package front.output;
 
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import keypresses.KeyBindings;
+import front.input.keypresses.KeyBindings;
 
 // This class is activated by the Startup class
 // This is the frame for the window where everything goes.
@@ -18,9 +18,9 @@ public class Frame extends JFrame{
 
 		keyBindings = keyBindingsIn;
 
-		DrawPanel gp = new DrawPanel();
-		add(gp);
-		gp.setVisible(true);
+		DrawPanel drawPanel = new DrawPanel();
+		add(drawPanel);
+		drawPanel.setVisible(true);
 		setLayout(new GridLayout(1,1));
 		setSize(600,400);
 		setResizable(true);

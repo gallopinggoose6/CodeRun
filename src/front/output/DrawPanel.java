@@ -1,4 +1,5 @@
-package coderun;
+package front.output;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,15 +35,15 @@ import javax.swing.Timer;
 					super.paintComponent(g);
 					Graphics2D g2 = (Graphics2D)g;
 					if(frame == 0){
-						g2.drawImage(Toolkit.getDefaultToolkit().getImage("CodeRun_Runner0.png"), 50, 50, this);
+						g2.drawImage(Toolkit.getDefaultToolkit().getImage("../pictures/CodeRun_Runner0.png"), 50, 50, this);
 					} else if(frame == 1){
-						g2.drawImage(Toolkit.getDefaultToolkit().getImage("CodeRun_Runner1.png"), 50, 50, this);
+						g2.drawImage(Toolkit.getDefaultToolkit().getImage("../pictures/CodeRun_Runner1.png"), 50, 50, this);
 					} else if(frame == 2){
-						g2.drawImage(Toolkit.getDefaultToolkit().getImage("CodeRun_Runner2.png"), 50, 50, this);
+						g2.drawImage(Toolkit.getDefaultToolkit().getImage("../pictures/CodeRun_Runner2.png"), 50, 50, this);
 					} else if(frame == 3){
-						g2.drawImage(Toolkit.getDefaultToolkit().getImage("CodeRun_Runner3.png"), 50, 50, this);
+						g2.drawImage(Toolkit.getDefaultToolkit().getImage("../pictures/CodeRun_Runner3.png"), 50, 50, this);
 					} else if(frame == 4){
-						g2.drawImage(Toolkit.getDefaultToolkit().getImage("CodeRun_Runner4.png"), 50, 50, this);
+						g2.drawImage(Toolkit.getDefaultToolkit().getImage("../pictures/CodeRun_Runner4.png"), 50, 50, this);
 					}
 				}
 				

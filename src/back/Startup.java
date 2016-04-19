@@ -1,6 +1,7 @@
-package coderun;
+package back;
 
-import keypresses.KeyBindings;
+import front.input.keypresses.KeyBindings;
+import front.output.Frame;
 // This class is activated by the launchgame class
 // This class starts up everything.
 // It initializes most of the classes.
