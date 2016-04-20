@@ -1,4 +1,3 @@
-package coderun;
 import back.Startup;
 
 // This class launches the game.
@@ -7,8 +6,8 @@ import back.Startup;
 // More than likely the startup class will only have a consturctor
 // The reason we have a startup class and don't just put the code in this class is that I don't want to make everything static for this class.
 public class LaunchGame{
-	public static void main (String[] args){
-		
-		new Startup();
-	}
+    public static void main (String[] args){
+
+        new Startup();
+    }
 }

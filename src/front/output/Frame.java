@@ -12,23 +12,23 @@ import front.input.keypresses.KeyBindings;
 // It has to add the KeyBindings class so the KeyBindings has the keyboard focus when this window is selected
 public class Frame extends JFrame{
 
-	private KeyBindings keyBindings;
+    private KeyBindings keyBindings;
 
-	public Frame (KeyBindings keyBindingsIn){
+    public Frame (KeyBindings keyBindingsIn){
 
-		keyBindings = keyBindingsIn;
+        keyBindings = keyBindingsIn;
 
-		DrawPanel drawPanel = new DrawPanel();
-		add(drawPanel);
-		drawPanel.setVisible(true);
-		setLayout(new GridLayout(1,1));
-		setSize(600,400);
-		setResizable(true);
-		setTitle("Code Runner");
-		setLocationRelativeTo(null);
-		//gp.add(paint);
-		//this.add(keyBindings);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-	}
+        DrawPanel drawPanel = new DrawPanel();
+        add(drawPanel);
+        drawPanel.setVisible(true);
+        setLayout(new GridLayout(1,1));
+        setSize(600,400);
+        setResizable(true);
+        setTitle("Code Runner");
+        setLocationRelativeTo(null);
+        //gp.add(paint);
+        //this.add(keyBindings);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
 }

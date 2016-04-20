@@ -7,13 +7,13 @@ import javax.swing.AbstractAction;
 // This class has a method that should get called when you hit the space bar
 public class SpacePressed extends AbstractAction{
 
-	public SpacePressed(){
+    public SpacePressed(){
 
-	}
+    }
 
-	public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e){
 	
-	//This is what hopefully get trigered when the space bar is pressed
+        //This is what hopefully get trigered when the space bar is pressed
         System.out.println("Space Pressed");
-	}
+    }
 }

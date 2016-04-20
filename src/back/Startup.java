@@ -10,13 +10,13 @@ import front.output.Frame;
 // Please do not name an object by the first letter of the class name. 
 // You can use the full class name for the name of the object.
 public class Startup{
-	
-	Frame frame;
-	KeyBindings keyBindings;
 
-	public Startup(){
+    Frame frame;
+    KeyBindings keyBindings;
 
-		keyBindings = new KeyBindings();
-		frame = new Frame(keyBindings);
-	}
+    public Startup(){
+
+        keyBindings = new KeyBindings();
+        frame = new Frame(keyBindings);
+    }
 }
