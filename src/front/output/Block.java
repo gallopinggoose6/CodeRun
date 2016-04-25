@@ -11,7 +11,6 @@ public class Block {
 		w  = width;
 		h = height;
 	}
-	Block b1 = new Block(100, 100, 100, 100);
 	public void Draw(Graphics g) {
 		Graphics2D g2 = (Graphics2D)g;
 		g2.drawRect(b1.x, b1.y, b1.w, b1.h);
