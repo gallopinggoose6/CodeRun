@@ -5,8 +5,7 @@ public class character {
 	public ReturnY() {
 		return y;
 	}
-	public void DrawCharacter(Graphics g) {
-		Graphics2D g2 = (Graphics2D)g;
+	public void ReturnBY() {
+		return y+32;
 	}
 }
-Status API Training Shop Blog About
