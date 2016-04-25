@@ -4,3 +4,5 @@ The object of the game is to reach the goal.
 Game story:
 
 You are an anti virus in a computer. Fix the computer
+
+This really needs a lot of editing, as the game develops
