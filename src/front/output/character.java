@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class character {
-  int y = 50;
+  public int y = 50;
 	public ReturnY() {
 		return y;
 	}
