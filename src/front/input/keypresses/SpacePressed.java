@@ -7,7 +7,12 @@ import javax.swing.AbstractAction;
 // This class has a method that should get called when you hit the space bar
 public class SpacePressed extends AbstractAction{
 
-    public SpacePressed(){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public SpacePressed(){
 
     }
 

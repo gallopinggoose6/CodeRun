@@ -2,6 +2,7 @@ package back;
 
 import front.input.keypresses.KeyBindings;
 import front.output.Frame;
+import front.output.character;
 // This class is activated by the launchgame class
 // This class starts up everything.
 // It initializes most of the classes.
@@ -13,10 +14,12 @@ public class Startup{
 
     Frame frame;
     KeyBindings keyBindings;
-
+    character character;
+    
     public Startup(){
 
         keyBindings = new KeyBindings();
         frame = new Frame(keyBindings);
+        character = new character();
     }
 }

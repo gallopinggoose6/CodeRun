@@ -1,11 +1,11 @@
-import java.awt.*;
+package front.output;
 
 public class character {
-  public int y = 50;
-	public ReturnY() {
+  public static int y = 50;
+	public static int ReturnY() {
 		return y;
 	}
-	public void ReturnBY() {
+	public int ReturnBY() {
 		return y+32;
 	}
 }

@@ -2,7 +2,6 @@ package front.output;
 
 import java.awt.GridLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import front.input.keypresses.KeyBindings;
 
 // This class is activated by the Startup class
@@ -12,7 +11,11 @@ import front.input.keypresses.KeyBindings;
 // It has to add the KeyBindings class so the KeyBindings has the keyboard focus when this window is selected
 public class Frame extends JFrame{
 
-    private KeyBindings keyBindings;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private KeyBindings keyBindings;
 
     public Frame (KeyBindings keyBindingsIn){
 

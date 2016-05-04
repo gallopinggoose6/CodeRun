@@ -8,7 +8,11 @@ import javax.swing.KeyStroke;
 // It sets up every keypress and makes the correct classes get called
 public class KeyBindings extends JComponent{
 
-    private SpacePressed spacePressed;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private SpacePressed spacePressed;
 
     public KeyBindings(){
 

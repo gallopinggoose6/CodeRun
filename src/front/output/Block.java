@@ -1,3 +1,5 @@
+package front.output;
+
 import java.awt.*;
 
 public class Block {
@@ -13,6 +15,6 @@ public class Block {
 	}
 	public void Draw(Graphics g) {
 		Graphics2D g2 = (Graphics2D)g;
-		g2.drawRect(b1.x, b1.y, b1.w, b1.h);
-	}
+		g2.drawRect(x, y, w, h);
+		}
 }
