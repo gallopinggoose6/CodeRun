@@ -20,7 +20,6 @@ public class Frame extends JFrame{
     public Frame (KeyBindings keyBindingsIn){
 
         keyBindings = keyBindingsIn;
-
         
         add(drawPanel);
         drawPanel.setVisible(true);
