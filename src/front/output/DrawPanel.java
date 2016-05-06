@@ -1,56 +1,46 @@
 package front.output;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JPanel;
-import javax.swing.Timer;
 
-public class DrawPanel extends JPanel implements ActionListener{		
+public class DrawPanel extends JPanel {		
     /**
      * 
      */
     private static final long serialVersionUID = -7776152874154687369L;
-        int frame = 0;
-        int numFrames = 4;
+        public static int frame = 0;
+        public static int numFrames = 4;
 
     public DrawPanel(){
-        setBackground(Color.white);
-
-        Timer timer = new Timer(30, new ActionListener() {
-   
-            public void actionPerformed(ActionEvent e) {
-                if(frame < numFrames){
-                    frame++;
-                } else {
-                    frame = 0;
-                }
-                repaint();
-                }
-        });
-        timer.start();
-        timer.setRepeats(true);
+        setBackground(Color.white);      
     }
+    
     public void paintComponent(Graphics g){
+    	
+    	int x = character.ReturnX();
+    	int y = character.ReturnY();
+    	
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
+        
         if(frame == 0){
             g2.drawImage(Toolkit.getDefaultToolkit().getImage
-                ("pictures/charcterAnimation/CodeRun_Runner0.png"), 50, character.ReturnY(), this);
+                ("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, this);
         } else if(frame == 1){
             g2.drawImage(Toolkit.getDefaultToolkit().getImage
-                ("pictures/charcterAnimation/CodeRun_Runner1.png"), 50, character.ReturnY(), this);
+                ("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, this);
         } else if(frame == 2){
             g2.drawImage(Toolkit.getDefaultToolkit().getImage
-                ("pictures/charcterAnimation/CodeRun_Runner2.png"), 50, character.ReturnY(), this);
+                ("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, this);
         } else if(frame == 3){
             g2.drawImage(Toolkit.getDefaultToolkit().getImage
-                ("pictures/charcterAnimation/CodeRun_Runner3.png"), 50, character.ReturnY(), this);
+                ("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, this);
         } else if(frame == 4){
             g2.drawImage(Toolkit.getDefaultToolkit().getImage
-                ("pictures/charcterAnimation/CodeRun_Runner4.png"), 50, character.ReturnY(), this);
+                ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, this);
         }
     }
-    public void actionPerformed(ActionEvent e) {
+    public void panelRepaint(){
+    	Frame.drawPanel.repaint();
     }
 }

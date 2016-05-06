@@ -10,7 +10,7 @@ import front.input.keypresses.KeyBindings;
 // It has to add the JPanel class in order to know where everything goes.
 // It has to add the KeyBindings class so the KeyBindings has the keyboard focus when this window is selected
 public class Frame extends JFrame{
-
+	static DrawPanel drawPanel = new DrawPanel();
     /**
 	 * 
 	 */
@@ -21,7 +21,7 @@ public class Frame extends JFrame{
 
         keyBindings = keyBindingsIn;
 
-        DrawPanel drawPanel = new DrawPanel();
+        
         add(drawPanel);
         drawPanel.setVisible(true);
         setLayout(new GridLayout(1,1));

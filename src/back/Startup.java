@@ -11,15 +11,11 @@ import front.output.character;
 // Please do not name an object by the first letter of the class name. 
 // You can use the full class name for the name of the object.
 public class Startup{
-
-    Frame frame;
-    KeyBindings keyBindings;
-    character character;
-    
     public Startup(){
 
-        keyBindings = new KeyBindings();
-        frame = new Frame(keyBindings);
-        character = new character();
+        KeyBindings keyBindings = new KeyBindings();
+        character character = new character();
+        GameTimer GameTimer = new GameTimer();
+        Frame frame = new Frame(keyBindings);
     }
 }
