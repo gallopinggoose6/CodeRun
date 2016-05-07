@@ -6,7 +6,7 @@ public class character {
 	public static int ReturnY() {
 		return y;
 	}
-	public int ReturnBY() {
+	public static int ReturnBY() {
 		return y+32;
 	}
 	public static int ReturnX(){
