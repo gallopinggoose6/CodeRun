@@ -15,9 +15,16 @@ public class Spike {
 		x = xPos - levelDone;
 		y = yPos;
 	}
-	
-	public void Draw(Graphics g) {
-		Graphics2D g2 = (Graphics2D)g;
-		
-		}
+	public static int ReturnX(){
+		return x;
+	}
+	public static int ReturnY(){
+		return y;
+	}
+	public static int ReturnW(){
+		return w;
+	}
+	public static int ReturnH(){
+		return h;
+	}
 }
