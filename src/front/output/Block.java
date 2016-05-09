@@ -21,5 +21,17 @@ public class Block {
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setColor(c);
 		g2.fillRect(x, y, w, h);
-		}
+	}
+	public static int ReturnX(){
+		return x;
+	}
+	public static int ReturnY(){
+		return y;
+	}
+	public static int ReturnW(){
+		return w;	
+	}
+	public static int ReturnH(){
+		return h;	
+	}
 }
