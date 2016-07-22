@@ -5,10 +5,10 @@ import java.awt.*;
 import back.GameTimer;
 
 public class Block {
-	int x;
-	int y;
-	int w;
-	int h;
+	static int x;
+	static int y;
+	static int w;
+	static int h;
 	int levelDone = GameTimer.levelDone;
 	Color c = Color.gray;
 	public Block(int xPos, int yPos, int width, int height) {
@@ -33,5 +33,6 @@ public class Block {
 	}
 	public static int ReturnH(){
 		return h;	
+		
 	}
 }

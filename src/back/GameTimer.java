@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
-import front.output.DrawPanel;
+import front.output.Frame;
 
 public class GameTimer implements ActionListener{
 	public static int levelDone = 0;
@@ -12,13 +12,7 @@ public class GameTimer implements ActionListener{
 		Timer timer = new Timer(30, new ActionListener() {	 
 	         public void actionPerformed(ActionEvent e) {
 	        	 levelDone += 5;
-	             if(DrawPanel.frame < DrawPanel.numFrames){
-	                 DrawPanel.frame++;
-	             } else {
-	                 DrawPanel.frame = 0;
-	             }
-	             DrawPanel p = new DrawPanel();
-	             p.panelRepaint();
+	             Frame.drawPanel.repaint();
 	             }
 	     	});
 		 timer.start();
