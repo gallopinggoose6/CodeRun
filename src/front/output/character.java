@@ -1,14 +1,13 @@
 package front.output;
-import java.awt.*;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Toolkit;
 
 public class character {
-	
-	public static int y = 50;
-  	public static int x = 50;
-  
-  	int frame = 0;
-  	int numFrames = 4;
-  
+  public static int y = 50;
+  public static int x = 50;
+  static int frame = 0;
 	public static int ReturnY() {
 		return y;
 	}
@@ -18,30 +17,28 @@ public class character {
 	public static int ReturnX(){
 		return x;
 	}
-	public void Draw(Graphics g){
-		
-        Graphics2D g2 = (Graphics2D)g;
-        
+	public static void Draw(Graphics g){
+		Graphics2D g2 = (Graphics2D)g;
 		if(frame == 0){
 	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
 	            ("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, Frame.drawPanel);
+	        frame++;
 	    } else if(frame == 1){
 	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
 	            ("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, Frame.drawPanel);
+	        frame++;
 	    } else if(frame == 2){
 	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
 	            ("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, Frame.drawPanel);
+	        frame++;
 	    } else if(frame == 3){
 	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
 	            ("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, Frame.drawPanel);
+	        frame++;
 	    } else if(frame == 4){
 	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
 	            ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
+	        frame=0;
 	    }
-		if(frame < numFrames){
-            frame++;
-        } else {
-            frame = 0;
-        }
 	}
 }

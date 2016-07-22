@@ -5,21 +5,34 @@ import java.awt.*;
 import back.GameTimer;
 
 public class Block {
-	int x;
-	int y;
-	int w;
-	int h;
+	static int x;
+	static int y;
+	static int w;
+	static int h;
+	int levelDone = GameTimer.levelDone;
 	Color c = Color.gray;
 	public Block(int xPos, int yPos, int width, int height) {
-		x = xPos;
+		x = xPos - levelDone;
 		y = yPos;
 		w  = width;
 		h = height;
 	}
 	public void Draw(Graphics g) {
 		Graphics2D g2 = (Graphics2D)g;
-		x -= GameTimer.levelDone;
 		g2.setColor(c);
 		g2.fillRect(x, y, w, h);
+	}
+	public static int ReturnX(){
+		return x;
+	}
+	public static int ReturnY(){
+		return y;
+	}
+	public static int ReturnW(){
+		return w;	
+	}
+	public static int ReturnH(){
+		return h;	
+		
 	}
 }

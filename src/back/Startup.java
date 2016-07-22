@@ -2,6 +2,7 @@ package back;
 
 import front.input.keypresses.KeyBindings;
 import front.output.Frame;
+import front.output.character;
 // This class is activated by the launchgame class
 // This class starts up everything.
 // It initializes most of the classes.
@@ -13,6 +14,7 @@ public class Startup{
     public Startup(){
 
         KeyBindings keyBindings = new KeyBindings();
+        character character = new character();
         GameTimer GameTimer = new GameTimer();
         Frame frame = new Frame(keyBindings);
     }
