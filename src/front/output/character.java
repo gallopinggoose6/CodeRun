@@ -5,9 +5,10 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 
 public class character {
-  public static int y = 50;
+  public static int y = 10;
   public static int x = 50;
   static int frame = 0;
+  static boolean isFalling = true;
 	public static int ReturnY() {
 		return y;
 	}
@@ -18,6 +19,9 @@ public class character {
 		return x;
 	}
 	public static void Draw(Graphics g){
+		if(isFalling){
+			y += 2;
+		}
 		Graphics2D g2 = (Graphics2D)g;
 		if(frame == 0){
 	        g2.drawImage(Toolkit.getDefaultToolkit().getImage

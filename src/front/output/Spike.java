@@ -27,8 +27,9 @@ public class Spike {
 	public static int ReturnH(){
 		return h;
 	}
-	public static void Draw(Graphics g){
+	void Draw(Graphics g){
 		Graphics2D g2 = (Graphics2D)g;
+		checkCollision();
 		switch(frame){
 		case 0:
 			g2.drawImage(Toolkit.getDefaultToolkit().getImage
@@ -49,5 +50,9 @@ public class Spike {
 			frame = 0;
 		break;
 		}
+	}
+	void checkCollision() {
+		
+		
 	}
 }
