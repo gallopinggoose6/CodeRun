@@ -18,9 +18,15 @@ public class Block {
 		h = height;
 	}
 	public void Draw(Graphics g) {
+		checkCollide();
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setColor(c);
 		g2.fillRect(x, y, w, h);
+	}
+	void checkCollide() {
+		if(character.ReturnBY() == y && (character.ReturnX()>x && character.ReturnX() < x+w)){
+		}
+		
 	}
 	public static int ReturnX(){
 		return x;
