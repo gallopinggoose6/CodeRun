@@ -24,11 +24,11 @@ public class DrawPanel extends JPanel {
         Spike s2 = new Spike(1050, 90);
         s2.Draw(g);
         
-        Block b = new Block(50, character.ReturnBY(), 100, 20);
+        Block b = new Block(50, 82, 100, 20);
         b.Draw(g);
         Block b1 = new Block(300, 100, 100, 100);
         b1.Draw(g);
-        Block b2 = new Block(1000, character.ReturnBY(), 500, 20);
+        Block b2 = new Block(1000, 82, 500, 20);
         b2.Draw(g);
     }
     public void panelRepaint(){
