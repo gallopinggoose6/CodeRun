@@ -23,8 +23,18 @@ public class Block {
 		g2.setColor(c);
 		g2.fillRect(x, y, w, h);
 	}
+	public int returnAboveY(){
+		return y-32;
+	}
 	void checkCollide() {
 		if(character.ReturnBY() == y && (character.ReturnX()>x && character.ReturnX() < x+w)){
+			character.isFalling = false;
+			Frame.drawPanel.blockCollisionFound = true;
+		}
+		else {
+			if(DrawPanel.blockCollisionFound == false){
+				character.isFalling = true;
+			}
 		}
 		
 	}
