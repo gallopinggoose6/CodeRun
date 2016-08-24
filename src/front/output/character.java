@@ -5,6 +5,8 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 
 public class character {
+  public static int VELOCITY = 0;
+  public static int GRAVITY = 2;
   public static int y = 10;
   public static int x = 50;
   static int frame = 0;
@@ -20,7 +22,13 @@ public class character {
 	}
 	public static void Draw(Graphics g){
 		if(isFalling){
-			y += 2;
+			VELOCITY += GRAVITY;
+			if(VELOCITY > 150){
+				VELOCITY = 150;
+			}
+			y-=VELOCITY:
+		} else {
+			VELOCITY = 0;
 		}
 		Graphics2D g2 = (Graphics2D)g;
 		if(frame == 0){
