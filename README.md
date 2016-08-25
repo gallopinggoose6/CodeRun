@@ -5,4 +5,4 @@ So far, there's a character animation, and some code for jumping.
 If you would like to help, please see the issues tab, and create a new issue concerning what you would like to add.
 
 Also, if you come up with a better more unique name for this that is about an anti-virus software fixing a computer and Running
-Please list it in the issues section because there is a lot or repositories with the name CodeRun, or CodeRunner
+Please list it in the issues section because there is a lot or repositories with the name CodeRun, or CodeRunner.
