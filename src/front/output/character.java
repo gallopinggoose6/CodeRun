@@ -6,9 +6,10 @@ import java.awt.Toolkit;
 
 public class character {
   public static int VELOCITY = 0;
-  public static int GRAVITY = 2;
+  public static int GRAVITY = 1;
   public static int y = 10;
   public static int x = 50;
+  public static int tick = 0;
   static int frame = 0;
   static boolean isFalling = true;
 	public static int ReturnY() {
@@ -22,11 +23,15 @@ public class character {
 	}
 	public static void Draw(Graphics g){
 		if(isFalling){
-			VELOCITY += GRAVITY;
-			if(VELOCITY > 150){
-				VELOCITY = 150;
+			if(tick == 5){
+				VELOCITY += GRAVITY;
+				tick = 0;
 			}
-			y-=VELOCITY:
+			tick++;
+			if(VELOCITY > 75){
+				VELOCITY = 75;
+			}
+			y+=VELOCITY;
 		} else {
 			VELOCITY = 0;
 		}
