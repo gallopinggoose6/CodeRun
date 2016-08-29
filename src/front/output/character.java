@@ -36,26 +36,36 @@ public class character {
 			VELOCITY = 0;
 		}
 		Graphics2D g2 = (Graphics2D)g;
-		if(frame == 0){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 1){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 2){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 3){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 4){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
-	        frame=0;
-	    }
+		
+		switch(frame){
+		case 0:
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage
+					("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, Frame.drawPanel);
+			frame++;
+		break;
+		case 1:
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage
+					("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, Frame.drawPanel);
+			frame++;
+		break;
+		case 2:
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage
+					("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, Frame.drawPanel);
+			frame++;
+		break;
+		case 3:
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage
+					("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, Frame.drawPanel);
+			frame++;
+		break;
+		case 4:
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage
+					("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
+			frame = 0;
+		break;
+		default:
+			frame = 0;
+		break;
+		}
 	}
 }
