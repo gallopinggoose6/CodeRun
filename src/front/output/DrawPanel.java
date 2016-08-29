@@ -29,8 +29,7 @@ public class DrawPanel extends JPanel {
         Spike s2 = new Spike(1050, b2.returnAboveY());
         s2.Draw(g);
         
-        //These next three lines of code must go last
-        character c = new character();
+        //These next two lines of code must go last
         character.Draw(g);
         blockCollisionFound = false;
     }
