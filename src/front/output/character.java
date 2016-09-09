@@ -1,63 +1,86 @@
 package front.output;
-
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
-import javax.swing.JPanel;
-
-public class DrawPanel extends JPanel implements KeyListener{		
-    /**
-     * 
-     */
-    private static final long serialVersionUID = -7776152874154687369L;
-    static boolean blockCollisionFound = false;
-    
-    public DrawPanel(){
-    	this.setFocusable(true);
-    	this.requestFocus();
-    	addKeyListener(this);
-        setBackground(Color.white);
-    }
-    
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        
-        drawBlocks(g);
-        
-        //These next two lines of code must go last
-        character.Draw(g);
-        blockCollisionFound = false;
-    }
-    public void drawBlocks(Graphics g){
-    	Block b = new Block(50, 80, 230, 20);
-        b.Draw(g);
-        Block b1 = new Block(300, 100, 100, 100);
-        b1.Draw(g);
-        Block b2 = new Block(1000, 80, 500, 20);
-        b2.Draw(g);
-        Block b3 = new Block(400, 253, 1000, 10);
-        b3.Draw(g);
-        Block b4 = new Block(550, 100, 100, 10);
-        b4.Draw(g);
-        Block b5 = new Block(750, 100, 200, 10);
-        b5.Draw(g);
-        Spike s = new Spike(800, 221);
-        s.Draw(g);
-        Spike s2 = new Spike(1050, 48);
-        s2.Draw(g);
-    }
-
-	public void keyPressed(KeyEvent e) {
-		int k = e.getKeyCode();
-		if(k == KeyEvent.VK_SPACE){
-			if(character.isFalling == false){
-				character.spacePressed = true;
-				character.VELOCITY = -5;
-			}
-		}
+public class character {
+	
+  public static int VELOCITY = 0;
+  static int absoluteValueVELOCITY = 0;
+  public static int GRAVITY = 1;
+  public static int y = 10;
+  public static int x = 50;
+  public static int tick = 0;
+  static int frame = 0;
+  static boolean isFalling = true;
+  static boolean spacePressed = false;
+  
+  	public character(){
+  		
+  	}
+	public static int ReturnY() {
+		return y;
 	}
-
-	public void keyReleased(KeyEvent e) {}
-	public void keyTyped(KeyEvent e) {}
+	public static int ReturnBY() {
+		return y+32;
+	}
+	public static int ReturnX(){
+		return x;
+	}
+	public static void Draw(Graphics g){
+		if(spacePressed){
+			isFalling = true;
+		}
+		if(isFalling){
+			if(tick == 5){
+				VELOCITY += GRAVITY;
+				tick = 0;
+			}
+			tick++;
+			if(VELOCITY > 75){
+				VELOCITY = 75;
+			}
+			if(VELOCITY < 0){
+				absoluteValueVELOCITY = VELOCITY + (-2*VELOCITY);
+			} else {
+				absoluteValueVELOCITY = VELOCITY;
+			}
+			for(int i = 0; i < absoluteValueVELOCITY; i++){
+				
+				if(VELOCITY > 0){
+					y++;
+				} else {
+					y--;
+				}
+				Frame.drawPanel.drawBlocks(g);
+				if(!isFalling){
+					break;
+				}
+			}
+			spacePressed = false;
+		} else{
+			VELOCITY = 0;
+		}
+		Graphics2D g2 = (Graphics2D)g;
+		if(frame == 0){
+	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+	            ("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, Frame.drawPanel);
+	        frame++;
+	    } else if(frame == 1){
+	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+	            ("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, Frame.drawPanel);
+	        frame++;
+	    } else if(frame == 2){
+	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+	            ("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, Frame.drawPanel);
+	        frame++;
+	    } else if(frame == 3){
+	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+	            ("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, Frame.drawPanel);
+	        frame++;
+	    } else if(frame == 4){
+	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+	            ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
+	        frame=0;
+	    }
+	}
 }
