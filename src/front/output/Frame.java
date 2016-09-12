@@ -6,8 +6,6 @@ import javax.swing.JFrame;
 // This class is activated by the Startup class
 // This is the frame for the window where everything goes.
 // It sets some defaults for the window here
-// It has to add the JPanel class in order to know where everything goes.
-// It has to add the KeyBindings class so the KeyBindings has the keyboard focus when this window is selected
 public class Frame extends JFrame{
 	public static DrawPanel drawPanel = new DrawPanel();
     /**
