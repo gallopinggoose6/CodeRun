@@ -2,7 +2,6 @@ package front.output;
 
 import java.awt.GridLayout;
 import javax.swing.JFrame;
-import front.input.keypresses.KeyBindings;
 
 // This class is activated by the Startup class
 // This is the frame for the window where everything goes.
@@ -15,12 +14,8 @@ public class Frame extends JFrame{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private KeyBindings keyBindings;
 
-    public Frame (KeyBindings keyBindingsIn){
-
-        keyBindings = keyBindingsIn;
-        
+    public Frame (){        
         add(drawPanel);
         drawPanel.setVisible(true);
         setLayout(new GridLayout(1,1));
