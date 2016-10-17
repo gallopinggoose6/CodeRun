@@ -42,6 +42,8 @@ public class DrawPanel extends JPanel implements KeyListener{
         b4.Draw(g);
         Block b5 = new Block(750, 100, 200, 10);
         b5.Draw(g);
+        Block b6 = new Block(2750, 100, 200, 10);
+        b6.Draw(g);
         Spike s = new Spike(800, 221);
         s.Draw(g);
         Spike s2 = new Spike(1050, 48);
