@@ -2,6 +2,8 @@ package front.output;
 import java.awt.*;
 import java.awt.event.*;
 
+import javax.swing.JOptionPane;
+
 public class character {
 	
   public static int VELOCITY = 0;
@@ -13,6 +15,9 @@ public class character {
   static int frame = 0;
   static boolean isFalling = true;
   static boolean spacePressed = false;
+  static String killType="You died by Spontaneous Death";
+  static int kill = 0;
+  
   
   	public character(){
   		
@@ -27,6 +32,10 @@ public class character {
 		return x;
 	}
 	public static void Draw(Graphics g){
+		if(y>1000 && kill == 0){
+			killType="You Died by Falling";
+			killCharc();
+		}
 		if(spacePressed){
 			isFalling = true;
 		}
@@ -82,5 +91,11 @@ public class character {
 	            ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
 	        frame=0;
 	    }
+	}
+	static void killCharc(){
+		kill=1;
+		JOptionPane op = new JOptionPane();
+        op.showMessageDialog(null, killType);
+        op.setValue("done");        
 	}
 }
