@@ -3,9 +3,6 @@ package front.output;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 
-// This class is activated by the Startup class
-// This is the frame for the window where everything goes.
-// It sets some defaults for the window here
 public class Frame extends JFrame{
 	public static DrawPanel drawPanel = new DrawPanel();
     /**
