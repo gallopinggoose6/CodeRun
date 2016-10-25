@@ -17,6 +17,7 @@ public class character {
   static boolean spacePressed = false;
   static String killType="You died by Spontaneous Death";
   static int kill = 0;
+  static boolean drawing = true;
   
   
   	public character(){
@@ -69,31 +70,34 @@ public class character {
 		} else{
 			VELOCITY = 0;
 		}
-		Graphics2D g2 = (Graphics2D)g;
-		if(frame == 0){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 1){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 2){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 3){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, Frame.drawPanel);
-	        frame++;
-	    } else if(frame == 4){
-	        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-	            ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
-	        frame=0;
-	    }
+		if(drawing){
+			Graphics2D g2 = (Graphics2D)g;
+			if(frame == 0){
+		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+		            ("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, Frame.drawPanel);
+		        frame++;
+		    } else if(frame == 1){
+		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+		            ("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, Frame.drawPanel);
+		        frame++;
+		    } else if(frame == 2){
+		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+		            ("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, Frame.drawPanel);
+		        frame++;
+		    } else if(frame == 3){
+		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+		            ("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, Frame.drawPanel);
+		        frame++;
+		    } else if(frame == 4){
+		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
+		            ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
+		        frame=0;
+		    }
+		}
 	}
 	static void killCharc(){
 		kill=1;
+		drawing=false;
 		JOptionPane op = new JOptionPane();
         op.showMessageDialog(null, killType);
         op.setValue("done");        

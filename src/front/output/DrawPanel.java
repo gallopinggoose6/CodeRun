@@ -3,7 +3,6 @@ package front.output;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import javax.swing.JPanel;
 
 public class DrawPanel extends JPanel implements KeyListener{		
@@ -48,6 +47,8 @@ public class DrawPanel extends JPanel implements KeyListener{
         s.Draw(g);
         Spike s2 = new Spike(1050, 48);
         s2.Draw(g);
+        Exit e = new Exit(1500-32, 80-32);
+        e.Draw(g);
     }
 
 	public void keyPressed(KeyEvent e) {
