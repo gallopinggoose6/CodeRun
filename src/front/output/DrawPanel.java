@@ -59,6 +59,9 @@ public class DrawPanel extends JPanel implements KeyListener{
 				character.VELOCITY = -5;
 			}
 		}
+		if(k == KeyEvent.VK_R){
+			back.GameTimer.reset();
+		}
 	}
 
 	public void keyReleased(KeyEvent e) {}

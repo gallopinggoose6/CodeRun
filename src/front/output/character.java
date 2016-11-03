@@ -9,15 +9,16 @@ public class character {
   public static int VELOCITY = 0;
   static int absoluteValueVELOCITY = 0;
   public static int GRAVITY = 1;
-  public static int y = 10;
+  public static int startery = 10;
+  public static int y = startery;
   public static int x = 50;
   public static int tick = 0;
   static int frame = 0;
   static boolean isFalling = true;
   static boolean spacePressed = false;
   static String killType="You died by Spontaneous Death";
-  static int kill = 0;
-  static boolean drawing = true;
+  public static int kill = 0;
+  public static boolean drawing = true;
   
   
   	public character(){

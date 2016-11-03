@@ -26,7 +26,7 @@ public class Exit {
 	}
 	void checkCollide() {
 		if((character.ReturnY() <= y && character.ReturnY()+32 >= y && character.ReturnX() <= x && character.ReturnX()+32 >= x) && character.kill==0){
-			character.killType="You fixed this Area";
+			character.killType="You Won";
 			character.killCharc();
 		}
 		else {
