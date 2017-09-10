@@ -5,14 +5,16 @@ import java.awt.*;
 import back.GameTimer;
 
 public class Block {
-	static int x;
-	static int y;
-	static int w;
-	static int h;
-	int levelDone = GameTimer.levelDone;
+	public int x;
+	public int y;
+	public int w;
+	public int h;
 	Color c = Color.gray;
+	int ox = 0;
+	
 	public Block(int xPos, int yPos, int width, int height) {
-		x = xPos - levelDone;
+		x = xPos;
+		ox = xPos;
 		y = yPos;
 		w  = width;
 		h = height;
@@ -22,12 +24,13 @@ public class Block {
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setColor(c);
 		g2.fillRect(x, y, w, h);
+		x = ox - GameTimer.levelDone;
 	}
 	public int returnAboveY(){
 		return y-32;
 	}
 	void checkCollide() {
-		if(character.ReturnBY() == y && (character.ReturnX()>x && character.ReturnX() < x+w)){
+		if(character.ReturnBY() == y && (character.ReturnX()>= x - 32 && character.ReturnX() < x+w)){
 			character.isFalling = false;
 			Frame.drawPanel.blockCollisionFound = true;
 		}
@@ -36,19 +39,5 @@ public class Block {
 				character.isFalling = true;
 			}
 		}
-		
-	}
-	public static int ReturnX(){
-		return x;
-	}
-	public static int ReturnY(){
-		return y;
-	}
-	public static int ReturnW(){
-		return w;	
-	}
-	public static int ReturnH(){
-		return h;	
-		
 	}
 }

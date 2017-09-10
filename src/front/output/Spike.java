@@ -4,33 +4,24 @@ import java.awt.*;
 import back.GameTimer;
 
 public class Spike {
-	public static int x;
-	public static int y;
+	public int x;
+	public int y;
 	public static int w = 32;
 	public static int h = 32;
 	static int frame = 0;
-	int levelDone = GameTimer.levelDone;
+	int ox = 0;
 	
 	public Spike(int xPos, int yPos) {
-		x = xPos - levelDone;
+		x = xPos - GameTimer.levelDone;
 		y = yPos;
+		ox = xPos;
 	}
-	public static int ReturnX(){
-		return x;
-	}
-	public static int ReturnY(){
-		return y;
-	}
-	public static int ReturnW(){
-		return w;
-	}
-	public static int ReturnH(){
-		return h;
-	}
+	
 	void Draw(Graphics g){
 		Graphics2D g2 = (Graphics2D)g;
 		checkCollision();
-		switch(frame){
+		x = ox - GameTimer.levelDone;
+		/*switch(frame){
 		case 0:
 			g2.drawImage(Toolkit.getDefaultToolkit().getImage
 		            ("pictures/spikeAnimation/spike0.png"), x, y, Frame.drawPanel);
@@ -49,6 +40,47 @@ public class Spike {
 		default:
 			frame = 0;
 		break;
+		}*/
+		if(frame == 0 | frame == 1 | frame == 2){
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_0.png"), x, y, Frame.drawPanel);
+		}
+		if(frame == 3 | frame == 4 | frame == 5){
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_1.png"), x, y, Frame.drawPanel);
+		}
+		if(frame == 6 | frame == 7 | frame == 8){
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_2.png"), x, y, Frame.drawPanel);
+		}
+		if(frame == 9 | frame == 10 | frame == 11){
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_3.png"), x, y, Frame.drawPanel);
+			
+		}
+		if(frame == 16 | frame == 17 | frame == 18){
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_4.png"), x, y, Frame.drawPanel);
+	
+		}
+		/*if(frame == 15 | frame == 16 | frame == 17){
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_5.png"), x, y, Frame.drawPanel);
+			frame++;
+		}
+		if(frame == 18 | frame == 19 | frame == 20){
+			//g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_6.png"), x, y, Frame.drawPanel);
+		frame = 24;
+		}
+		if(frame == 21 | frame == 22 | frame == 23){
+			//g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_7.png"), x, y, Frame.drawPanel);
+			frame = 24;
+		}
+		if(frame == 24 | frame == 25 | frame == 26){
+			g2.drawImage(Toolkit.getDefaultToolkit().getImage("pictures/spikeAnimation/spike_8.png"), x, y, Frame.drawPanel);
+			frame++;
+		}
+		if(frame > 26){
+			frame = 0;
+		}*/
+		if(frame == 18){
+			frame = 0;
+		} else {
+			frame++;
 		}
 	}
 	void checkCollision() {

@@ -1,7 +1,5 @@
 package front.output;
 import java.awt.*;
-import java.awt.event.*;
-
 import javax.swing.JOptionPane;
 
 public class character {
@@ -9,7 +7,7 @@ public class character {
   public static int VELOCITY = 0;
   static int absoluteValueVELOCITY = 0;
   public static int GRAVITY = 1;
-  public static int startery = 10;
+  public static int startery = 5;
   public static int y = startery;
   public static int x = 50;
   public static int tick = 0;
@@ -100,7 +98,7 @@ public class character {
 		kill=1;
 		drawing=false;
 		JOptionPane op = new JOptionPane();
-        op.showMessageDialog(null, killType);
+        JOptionPane.showMessageDialog(null, killType);
         op.setValue("done");        
 	}
 }

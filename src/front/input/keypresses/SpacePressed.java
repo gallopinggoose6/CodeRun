@@ -18,7 +18,7 @@ public class SpacePressed extends AbstractAction{
 
     public void actionPerformed(ActionEvent e){
 	
-        //This is what hopefully get trigered when the space bar is pressed
+        //This is what hopefully get triggered when the space bar is pressed
         System.out.println("Space Pressed");
     }
 }
