@@ -11,10 +11,10 @@ public class GameTimer implements ActionListener{
 	public GameTimer() {
 		Timer timer = new Timer(30, new ActionListener() {	 
 	         public void actionPerformed(ActionEvent e) {
-	        	 levelDone += 7;
-	             Frame.drawPanel.repaint();
-	             }
-	     	});
+	        	 	levelDone += 7;
+	        	 	Frame.drawPanel.repaint();
+	         }
+	     });
 		 timer.start();
 	     timer.setRepeats(true);
 	}
@@ -25,6 +25,6 @@ public class GameTimer implements ActionListener{
 		character.y = character.startery;
 		levelDone = 0;
 		character.drawing = true;
-		character.kill = 0;
+		character.kill = false;
 	}
 }

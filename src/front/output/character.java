@@ -1,6 +1,7 @@
 package front.output;
 import java.awt.*;
 import javax.swing.JOptionPane;
+import back.*;
 
 public class character {
 	
@@ -15,7 +16,7 @@ public class character {
   static boolean isFalling = true;
   static boolean spacePressed = false;
   static String killType="You died by Spontaneous Death";
-  public static int kill = 0;
+  public static boolean kill = false;
   public static boolean drawing = true;
   
   
@@ -32,7 +33,7 @@ public class character {
 		return x;
 	}
 	public static void Draw(Graphics g){
-		if(y>1000 && kill == 0){
+		if(y>1000 && kill == false){
 			killType="You Died by Falling";
 			killCharc();
 		}
@@ -95,10 +96,11 @@ public class character {
 		}
 	}
 	static void killCharc(){
-		kill=1;
-		drawing=false;
-		JOptionPane op = new JOptionPane();
-        JOptionPane.showMessageDialog(null, killType);
-        op.setValue("done");        
+		if(kill == false){
+			kill = true;
+			drawing=false;
+			JOptionPane op = new JOptionPane();
+			JOptionPane.showMessageDialog(null, killType);
+		}
 	}
 }

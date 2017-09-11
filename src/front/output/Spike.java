@@ -1,7 +1,6 @@
 package front.output;
 import java.awt.*;
-
-import back.GameTimer;
+import back.*;
 
 public class Spike {
 	public int x;
@@ -21,6 +20,12 @@ public class Spike {
 		Graphics2D g2 = (Graphics2D)g;
 		checkCollision();
 		x = ox - GameTimer.levelDone;
+		if(character.ReturnX()+32 >= x && character.ReturnX() <= x+w){
+			if(character.ReturnY() >= y && character.ReturnY() <= y+h){
+				character.killType = "You Died by running into a spike";
+				character.killCharc();
+			}
+		}
 		/*switch(frame){
 		case 0:
 			g2.drawImage(Toolkit.getDefaultToolkit().getImage

@@ -25,7 +25,7 @@ public class Exit {
 		return y-32;
 	}
 	void checkCollide() {
-		if((character.ReturnY() <= y && character.ReturnY()+32 >= y && character.ReturnX() <= x && character.ReturnX()+32 >= x) && character.kill==0){
+		if((character.ReturnY() <= y && character.ReturnY()+32 >= y && character.ReturnX() <= x && character.ReturnX()+32 >= x) && character.kill == false){
 			character.killType="You Won";
 			character.killCharc();
 		}
