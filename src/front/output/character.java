@@ -1,14 +1,13 @@
 package front.output;
 import java.awt.*;
 import javax.swing.JOptionPane;
-import back.*;
 
 public class character {
 	
-  public static int VELOCITY = 0;
-  static int absoluteValueVELOCITY = 0;
+  public static double VELOCITY = 0;
+  static double absoluteValueVELOCITY = 0;
   public static int GRAVITY = 1;
-  public static int startery = 5;
+  public static int startery = 30;
   public static int y = startery;
   public static int x = 50;
   public static int tick = 0;
@@ -39,6 +38,7 @@ public class character {
 		}
 		if(spacePressed){
 			isFalling = true;
+			spacePressed = false;
 		}
 		if(isFalling){
 			if(tick == 5){
@@ -55,7 +55,6 @@ public class character {
 				absoluteValueVELOCITY = VELOCITY;
 			}
 			for(int i = 0; i < absoluteValueVELOCITY; i++){
-				
 				if(VELOCITY > 0){
 					y++;
 				} else {
@@ -63,12 +62,11 @@ public class character {
 				}
 				Frame.drawPanel.drawBlocks(g);
 				if(!isFalling){
+					VELOCITY = 0;
 					break;
 				}
 			}
 			spacePressed = false;
-		} else{
-			VELOCITY = 0;
 		}
 		if(drawing){
 			Graphics2D g2 = (Graphics2D)g;
