@@ -13,7 +13,7 @@ public class DrawPanel extends JPanel implements KeyListener{
 	
     private static final long serialVersionUID = -7776152874154687369L;
     static boolean blockCollisionFound = false;
-    float initialTime = 0;
+    static float initialTime = 0;
     float jumpTime = 0;
     
     public DrawPanel(){
@@ -41,7 +41,7 @@ public class DrawPanel extends JPanel implements KeyListener{
         Exit e = new Exit(1500-32, 80-32);
         e.Draw(g);
     }
-    boolean wait = false;
+    static boolean wait = false;
 	public void keyPressed(KeyEvent e) {
 		int k = e.getKeyCode();
 		if(k == KeyEvent.VK_SPACE){
