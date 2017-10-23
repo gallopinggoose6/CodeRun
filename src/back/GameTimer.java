@@ -26,5 +26,10 @@ public class GameTimer implements ActionListener{
 		levelDone = 0;
 		character.drawing = true;
 		character.kill = false;
+		character.VELOCITY = 0;
+		character.isFalling = false;
+		Frame.drawPanel.initialTime = 0;
+		Frame.drawPanel.wait = false;
+		
 	}
 }

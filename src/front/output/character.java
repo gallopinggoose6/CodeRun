@@ -12,7 +12,7 @@ public class character {
   public static int x = 50;
   public static int tick = 0;
   static int frame = 0;
-  static boolean isFalling = true;
+  public static boolean isFalling = true;
   static boolean spacePressed = false;
   static String killType="You died by Spontaneous Death";
   public static boolean kill = false;
