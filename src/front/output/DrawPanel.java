@@ -37,7 +37,7 @@ public class DrawPanel extends JPanel implements KeyListener{
     	for(int i = 0; i < BlockLoader.spikes.size(); i++){
 			BlockLoader.spikes.get(i).Draw(g);
     	}
-
+	Frame.telemetryPanel.repaint();
         Exit e = new Exit(1500-32, 80-32);
         e.Draw(g);
     }
