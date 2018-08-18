@@ -11,8 +11,10 @@ public class GameTimer implements ActionListener{
 	public GameTimer() {
 		Timer timer = new Timer(30, new ActionListener() {	 
 	         public void actionPerformed(ActionEvent e) {
+	        	 if(character.drawing){	
 	        	 	levelDone += 7;
-	        	 	Frame.drawPanel.repaint();
+	        	 }
+	        	 Frame.drawPanel.repaint();
 	         }
 	     });
 		 timer.start();

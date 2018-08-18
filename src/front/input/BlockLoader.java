@@ -1,13 +1,13 @@
 package front.input;
 
 import front.output.*;
-
+import java.io.*;
 import java.util.*;
 
 public class BlockLoader {
 	public static ArrayList<Block> blocks = new ArrayList<Block>();
 	public static ArrayList<Spike> spikes = new ArrayList<Spike>();
-	Block b = new Block(50, 80, 230);
+	/*Block b = new Block(50, 80, 230);
     Block b1 = new Block(300, 100, 100);
     Block b2 = new Block(1000, 80, 500);
     Block b3 = new Block(400, 253, 1000);
@@ -20,20 +20,42 @@ public class BlockLoader {
     Spike s = new Spike(800, 189);
     Spike s1 = new Spike(1050, 16);
     Spike s2 = new Spike(50, 100);
-    
+    */
+	
+	BufferedReader counter = null;
+	BufferedReader reader = null;
+	File currentLevel = new File("level_test.txt");
+	int lines = 0;
+	InputStreamReader isr;
+	char[] levelContent;
+	
 	public BlockLoader(){
-		blocks.add(b);
-        blocks.add(b1);
-        blocks.add(b2);
-        blocks.add(b3);
-        blocks.add(b4);
-        blocks.add(b5);
-        blocks.add(b6);
-        blocks.add(b7);
-        blocks.add(b8);
-        blocks.add(b9);
-        spikes.add(s);
-        spikes.add(s1);
-        spikes.add(s2);
+		levelContent = new char[(int) currentLevel.length()];
+		try {
+			isr = new InputStreamReader(new FileInputStream(currentLevel));
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			isr.read(levelContent);
+			isr.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+			for(int i = 0; i < levelContent.length; i++){
+				String line = "";
+				if(levelContent[i] == 'B'){
+					for(int j = 1; j < 19; j++){
+						line += levelContent[i+j];
+					}
+					blocks.add(new Block(Integer.parseInt(line.substring(1, 6)),Integer.parseInt(line.substring(7, 12)),Integer.parseInt(line.substring(13, 18))));
+				}
+				if(levelContent[i] == 'S'){
+					for(int k = 1; k < 13; k++){
+						line += levelContent[i+k];
+					}
+					spikes.add(new Spike(Integer.parseInt(line.substring(1, 6)), Integer.parseInt(line.substring(7, 12))));
+				}
+			}
 	}
 }

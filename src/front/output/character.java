@@ -1,5 +1,8 @@
 package front.output;
 import java.awt.*;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
 public class character {
@@ -17,10 +20,24 @@ public class character {
   static String killType="You died by Spontaneous Death";
   public static boolean kill = false;
   public static boolean drawing = true;
-  
+  static Image frame0;
+  static Image frame1;
+  static Image frame2;
+  static Image frame3;
+  static Image frame4;
+  static Image frame5;
   
   	public character(){
-  		
+  		try {
+			frame0 = ImageIO.read(getClass().getResourceAsStream("\\..\\..\\pictures\\charcterAnimation\\CodeRun_Runner0.png"));
+			frame1 = ImageIO.read(getClass().getResourceAsStream("\\..\\..\\pictures\\charcterAnimation\\CodeRun_Runner1.png"));
+			frame2 = ImageIO.read(getClass().getResourceAsStream("\\..\\..\\pictures\\charcterAnimation\\CodeRun_Runner2.png"));
+			frame3 = ImageIO.read(getClass().getResourceAsStream("\\..\\..\\pictures\\charcterAnimation\\CodeRun_Runner3.png"));
+			frame4 = ImageIO.read(getClass().getResourceAsStream("\\..\\..\\pictures\\charcterAnimation\\CodeRun_Runner4.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
   	}
 	public static int ReturnY() {
 		return y;
@@ -71,24 +88,19 @@ public class character {
 		if(drawing){
 			Graphics2D g2 = (Graphics2D)g;
 			if(frame == 0){
-		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-		            ("pictures/charcterAnimation/CodeRun_Runner0.png"), x, y, Frame.drawPanel);
+		        g2.drawImage(frame0, x, y, Frame.drawPanel);
 		        frame++;
 		    } else if(frame == 1){
-		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-		            ("pictures/charcterAnimation/CodeRun_Runner1.png"), x, y, Frame.drawPanel);
+		        g2.drawImage(frame1, x, y, Frame.drawPanel);
 		        frame++;
 		    } else if(frame == 2){
-		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-		            ("pictures/charcterAnimation/CodeRun_Runner2.png"), x, y, Frame.drawPanel);
+		        g2.drawImage(frame2, x, y, Frame.drawPanel);
 		        frame++;
 		    } else if(frame == 3){
-		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-		            ("pictures/charcterAnimation/CodeRun_Runner3.png"), x, y, Frame.drawPanel);
+		        g2.drawImage(frame3, x, y, Frame.drawPanel);
 		        frame++;
 		    } else if(frame == 4){
-		        g2.drawImage(Toolkit.getDefaultToolkit().getImage
-		            ("pictures/charcterAnimation/CodeRun_Runner4.png"), x, y, Frame.drawPanel);
+		        g2.drawImage(frame4, x, y, Frame.drawPanel);
 		        frame=0;
 		    }
 		}
