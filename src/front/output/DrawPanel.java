@@ -1,10 +1,8 @@
 package front.output;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
-import javax.swing.JPanel;
+import java.awt.event.*;
+import javax.swing.*;
 
 import back.GameTimer;
 import front.input.*;
@@ -26,11 +24,15 @@ public class DrawPanel extends JPanel implements KeyListener{
     
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        drawBlocks(g);
-        //These next two lines of code must go last
-        character.Draw(g);
-        blockCollisionFound = false;
-        if(wait && character.isFalling) wait = false;
+        if(Frame.runGame){
+        	drawBlocks(g);
+        	//These next two lines of code must go last
+        	character.Draw(g);
+        	blockCollisionFound = false;
+        	if(wait && character.isFalling) wait = false;
+        } else {
+        	
+        }
     }
     public void drawBlocks(Graphics g){
     	for(int i = 0; i < BlockLoader.blocks.size(); i++){

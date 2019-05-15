@@ -65,11 +65,9 @@ public class Spike {
 		}
 		if(frame == 9 | frame == 10 | frame == 11){
 			g2.drawImage(frame3, x, y, Frame.drawPanel);
-			
 		}
 		if(frame == 16 | frame == 17 | frame == 18){
 			g2.drawImage(frame4, x, y, Frame.drawPanel);
-	
 		}
 		if(frame == 19 | frame == 20 | frame == 21){
 			g2.drawImage(frame5, x, y, Frame.drawPanel);
